@@ -101,5 +101,30 @@ function checkOperator(){
 calculateBtn.addEventListener('click', () =>{
 
         checkOperator();
+        
+        for (const child of resultsList.children) {
+            console.log(child.value);
+          }
 
 })
+
+
+// clear the results 
+
+const clearBtn = document.querySelector('#clear');
+
+clearBtn.addEventListener('click', () => {
+    clearResults();
+})
+
+function clearResults(){
+   
+    let child = resultsList.lastElementChild; 
+    while (child) {
+        resultsList.removeChild(child);
+        child = resultsList.lastElementChild;
+    }
+
+   console.log(resultsList.children);
+   console.log(resultsList);
+ }
